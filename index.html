@@ -1,310 +1,301 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo - Willams José do Espirito Santo</title>
-    <style>
-        :root {
-            --primary: #1a2a6c;
-            --secondary: #203a43;
-            --accent: #00d2ff;
-            --white: #ffffff;
-            --text: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo - Willams José do Espirito Santo</title>
+<style>
+:root {
+--primary: #1a2a6c;
+--secondary: #203a43;
+--accent: #00d2ff;
+--white: #ffffff;
+--gray: #f8f9fa;
+--text: #333;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-        }
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
 
-        body {
-            background-color: #e9ecef;
-            color: var(--text);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-        }
+body {
+background-color: #e9ecef;
+color: var(--text);
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 40px 20px;
+/* Garante que cores de fundo apareçam na impressão */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
 
-        /* Botão de Download/Impressão */
-        .download-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 12px 25px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.2s, background 0.2s;
-        }
+/* Estilo do Botão de Download/Impressão */
+.download-btn {
+position: fixed;
+top: 20px;
+right: 20px;
+padding: 12px 20px;
+background-color: var(--primary);
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+z-index: 1000;
+transition: background 0.3s;
+}
 
-        .download-btn:hover {
-            transform: translateY(-2px);
-            background-color: var(--secondary);
-        }
+.download-btn:hover {
+background-color: var(--secondary);
+}
 
-        /* Estrutura do Currículo */
-        .resume-card {
-            background: var(--white);
-            width: 100%;
-            max-width: 950px;
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-radius: 8px;
-            overflow: hidden;
-            min-height: 297mm;
-        }
+.resume-card {
+background: var(--white);
+width: 100%;
+max-width: 950px;
+display: grid;
+grid-template-columns: 320px 1fr;
+box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+border-radius: 8px;
+overflow: hidden;
+}
 
-        /* Barra Lateral */
-        .sidebar {
-            background: linear-gradient(180deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 40px 30px;
-        }
+/* Sidebar */
+.sidebar {
+background: linear-gradient(180deg, var(--primary), var(--secondary));
+color: var(--white);
+padding: 40px 30px;
+}
 
-        .sidebar h2 {
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: var(--accent);
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding-bottom: 10px;
-        }
+.sidebar h2 {
+font-size: 1.1rem;
+text-transform: uppercase;
+letter-spacing: 2px;
+margin-bottom: 20px;
+color: var(--accent);
+border-bottom: 1px solid rgba(255,255,255,0.2);
+padding-bottom: 10px;
+}
 
-        .info-group { margin-bottom: 35px; }
-        .info-group p { font-size: 0.9rem; margin-bottom: 12px; }
+.info-group { margin-bottom: 35px; }
+.info-group p { font-size: 0.9rem; margin-bottom: 12px; opacity: 0.9; }
 
-        .list-items { list-style: none; }
-        .list-items li {
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            padding-left: 15px;
-            position: relative;
-        }
-        .list-items li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
+.list-items { list-style: none; }
+.list-items li {
+font-size: 0.9rem;
+margin-bottom: 10px;
+padding-left: 15px;
+position: relative;
+}
+.list-items li::before {
+content: "▹";
+position: absolute;
+left: 0;
+color: var(--accent);
+}
 
-        /* Conteúdo Principal */
-        .main-content {
-            padding: 50px;
-            background: var(--white);
-        }
+/* Main Content */
+.main-content {
+padding: 50px;
+background: var(--white);
+}
 
-        .header {
-            margin-bottom: 40px;
-            border-bottom: 4px solid var(--primary);
-            padding-bottom: 20px;
-        }
+.header {
+margin-bottom: 40px;
+border-bottom: 4px solid var(--primary);
+padding-bottom: 20px;
+}
 
-        .header h1 {
-            font-size: 2rem;
-            color: var(--primary);
-            line-height: 1.1;
-            text-transform: uppercase;
-        }
+.header h1 {
+font-size: 1.8rem;
+color: var(--primary);
+line-height: 1.1;
+text-transform: uppercase;
+}
 
-        .header .role {
-            font-size: 1rem;
-            color: #666;
-            margin-top: 10px;
-            font-weight: 500;
-        }
+.header .role {
+font-size: 1.1rem;
+color: #666;
+margin-top: 10px;
+font-weight: 500;
+}
 
-        section { margin-bottom: 40px; }
-        section h2 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+section { margin-bottom: 40px; }
+section h2 {
+font-size: 1.3rem;
+color: var(--primary);
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
 
-        .experience-box {
-            margin-bottom: 25px;
-            border-left: 2px solid #ddd;
-            padding-left: 20px;
-            position: relative;
-        }
+.experience-box, .edu-box {
+margin-bottom: 25px;
+border-left: 2px solid #ddd;
+padding-left: 20px;
+position: relative;
+}
 
-        .experience-box::before {
-            content: "";
-            width: 10px;
-            height: 10px;
-            background: var(--primary);
-            position: absolute;
-            left: -6px;
-            top: 5px;
-            border-radius: 50%;
-        }
+.experience-box::before {
+content: "";
+width: 10px;
+height: 10px;
+background: var(--primary);
+position: absolute;
+left: -6px;
+top: 5px;
+border-radius: 50%;
+}
 
-        .box-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 700;
-            color: #444;
-        }
+.box-header {
+display: flex;
+justify-content: space-between;
+font-weight: 700;
+color: #444;
+}
 
-        .box-sub {
-            color: var(--primary);
-            font-style: italic;
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-        }
+.box-sub {
+color: var(--primary);
+font-style: italic;
+font-size: 0.95rem;
+margin-bottom: 8px;
+}
 
-        .desc {
-            font-size: 0.95rem;
-            color: #555;
-            text-align: justify;
-            line-height: 1.5;
-        }
+.desc {
+font-size: 0.95rem;
+color: #555;
+text-align: justify;
+line-height: 1.5;
+}
 
-        /* Estilos de Impressão */
-        @media print {
-            @page { margin: 0; size: auto; }
-            body { padding: 0; background: white; }
-            .download-btn { display: none !important; }
-            .resume-card {
-                box-shadow: none;
-                border-radius: 0;
-                width: 100%;
-                max-width: none;
-                display: grid !important;
-                grid-template-columns: 320px 1fr;
-            }
-            .sidebar {
-                background: var(--primary) !important;
-                min-height: 100vh;
-            }
-        }
+@media (max-width: 768px) {
+.resume-card { grid-template-columns: 1fr; }
+.sidebar { padding: 30px; }
+.main-content { padding: 30px; }
+}
 
-        @media (max-width: 768px) {
-            .resume-card { grid-template-columns: 1fr; }
-            .download-btn { top: auto; bottom: 20px; right: 20px; }
-        }
-    </style>
+/* Configurações específicas para que o PDF saia igual ao arquivo original */
+@media print {
+body { padding: 0; background: white; }
+.download-btn { display: none; } /* Esconde o botão no PDF */
+.resume-card { 
+box-shadow: none; 
+width: 100%; 
+grid-template-columns: 320px 1fr; 
+display: grid !important;
+}
+.sidebar {
+background: var(--primary) !important;
+-webkit-print-color-adjust: exact;
+}
+}
+</style>
 </head>
 <body>
 
-    <button class="download-btn" onclick="window.print()">
-        <span>💾</span> Baixar Currículo (PDF)
-    </button>
+<button class="download-btn" onclick="window.print()">Baixar PDF / Imprimir</button>
 
-    <div class="resume-card">
-        <aside class="sidebar">
-            <div class="info-group">
-                <h2>Contato</h2>
-                <p>📍 Abreu e Lima - Pernambuco</p>
-                <p>📞 (81) 99735-1708</p>
-                <p>📧 wjose.dev@gmail.com</p>
-                <p>🔗 www.linkedin.com/in/willamssanto</p>
-            </div>
+<div class="resume-card">
+<aside class="sidebar">
+<div class="info-group">
+<h2>Contato</h2>
+<p>📍 Abreu e Lima - PE </p>
+<p>📞 (81) 99735-1708</p>
+<p>📧 wjose.dev@gmail.com</p>
+<p>🔗 linkedin.com/in/willamsjosé622</p>
+</div>
 
-            <div class="info-group">
-                <h2>Habilidades</h2>
-                <ul class="list-items">
-                    <li>Comunicação eficaz</li>
-                    <li>Resiliência & Empatia</li>
-                    <li>Proatividade</li>
-                    <li>Trabalho em Equipe</li>
-                    <li>Liderança</li>
-                    <li>Resolução de Problemas</li>
-                </ul>
-            </div>
+<div class="info-group">
+<h2>Habilidades</h2>
+<ul class="list-items">
+<li>Comunicação Eficaz </li>
+<li>Resiliência & Empatia </li>
+<li>Proatividade </li>
+<li>Trabalho em Equipe </li>
+<li>Liderança </li>
+<li>Resolução de Problemas </li>
+</ul>
+</div>
 
-            <div class="info-group">
-                <h2>Cursos</h2>
-                <ul class="list-items">
-                    <li>Gestão de Compras e Estoque</li>
-                    <li>Metrologia Básica</li>
-                    <li>Operador de Empilhadeira</li>
-                    <li>Recebimento e conferência de materiais</li>
-                </ul>
-            </div>
-        </aside>
+<div class="info-group">
+<h2>Cursos</h2>
+<ul class="list-items">
+<li>Gestão de Compras e Estoque </li>
+<li>Metrologia Básica </li>
+<li>Operador de Empilhadeira </li>
+<li>Recebimento e conferência de materiais </li>
+</ul>
+</div>
+</aside>
 
-        <main class="main-content">
-            <header class="header">
-                <h1>Willams José do Espirito Santo</h1>
-                <div class="role">Logística | Análise e Desenvolvimento de Sistemas</div>
-            </header>
+<main class="main-content">
+<header class="header">
+<h1>Willams José do Espirito Santo </h1>
+<div class="role">Logística | Análise e Desenvolvimento de Sistemas </div>
+</header>
 
-            <section>
-                <h2>Resumo Profissional</h2>
-                <p class="desc">
-                    Profissional com mais de 20 anos de experiência em Logística e Gestão de Operações, atualmente a frequentar MBA em Gestão Operacional e Logística Empresarial. 
-                    Especialista na integração entre logística e tecnologia, utiliza ferramentas como Power BI, Python e AWS para a otimização de custos e tomada de decisões baseadas 
-                    em dados, treinamento na área de logística e gestão na indústria.
-                </p>
-            </section>
+<section>
+<h2>Resumo Profissional</h2>
+<p class="desc">
+Profissional com mais de 20 anos de experiência em Logística e Gestão de Operações, cursando MBA em Gestão Operacional e Logística Empresarial.
+Especialista na integração entre logística e tecnologia, aplicando **Power BI, Python e AWS** para otimização de processos e decisões orientadas a dados.
+Foco em alta performance operacional e experiência em desenvolver competências em Análise de Dados e Cloud.
+</p>
+</section>
 
-            <section>
-                <h2>Experiências Profissionais</h2>
-                
-                <div class="experience-box">
-                    <div class="box-header">
-                        <span>Marelli</span>
-                        <span>2021 – Atual</span>
-                    </div>
-                    <div class="box-sub">Analista Logístico</div>
-                    <p class="desc">Responsável pelas operações de carga e descarga de materiais, garantindo agilidade e segurança. Realiza a conferência de materiais e o recebimento de notas fiscais.</p>
-                </div>
+<section>
+<h2>Experiências</h2>
+<div class="experience-box">
+<div class="box-header">
+<span>Magneti Marelli </span>
+<span>2021 – Atual </span>
+</div>
+<div class="box-sub">Analista Logístico </div>
+<p class="desc">Responsável pelas operações de carga e descarga de materiais, garantindo agilidade e segurança no fluxo logístico. Realiza conferência de materiais e notas fiscais[cite: 32].</p>
+</div>
 
-                <div class="experience-box">
-                    <div class="box-header">
-                        <span>CMC Cimentos</span>
-                        <span>Abril a Setembro de 2017</span>
-                    </div>
-                    <div class="box-sub">Analista Logístico</div>
-                    <p class="desc">Planeamento de roteirização de cargas, negociação de fretes, gestão de frota para maior eficiência operacional
-                        e treinamento de equipe.</p>
-                </div>
+<div class="experience-box">
+<div class="box-header">
+<span>CMC Cimentos </span>
+<span>Abril a Setembro de 2017 </span>
+</div>
+<div class="box-sub">Analista Logístico </div>
+<p class="desc">Planejamento de roteirização de cargas, negociação de fretes e gestão de frota para eficiência operacional.</p>
+</div>
 
-                <div class="experience-box">
-                    <div class="box-header">
-                        <span>Alcoa Alumínio S/A</span>
-                        <span>2002 – 2016</span>
-                    </div>
-                    <div class="box-sub">Supply - Operador Multifunção</div>
-                    <p class="desc">Atuação em produção e logística, apoiando aquisições e controlo de materiais com foco no cumprimento de metas produtivas e 
-                        treinamento de equipe.</p>
-                </div>
-            </section>
+<div class="experience-box">
+<div class="box-header">
+<span>Alcoa Alumínio S/A </span>
+<span>2002 – 2016 </span>
+</div>
+<div class="box-sub">Supply - Operador Multifunção </div>
+<p class="desc">Operações de carga e descarga, apoio a aquisições e controle de materiais em ambiente de produção.</p>
+</div>
+</section>
 
-            <section>
-                <h2>Formação Académica</h2>
-                <div class="experience-box">
-                    <div class="box-header">MBA em Gestão Operacional e Logística</div>
-                    <div class="box-sub">Faculdade Anhanguera (2025 – 2026)</div>
-                </div>
-                <div class="experience-box">
-                    <div class="box-header">Pós-graduação em Análise de Dados</div>
-                    <div class="box-sub">Faculdade Anhanguera (2024 – 2025)</div>
-                </div>
-                <div class="experience-box">
-                    <div class="box-header">Tecnólogo em Análise e Desenv. de Sistemas</div>
-                    <div class="box-sub">Faculdade Estácio (2022 – 2024)</div>
-                </div>
-            </section>
-        </main>
-    </div>
+<section>
+<h2>Formação</h2>
+<div class="edu-box">
+<div class="box-header">MBA Gestão Operacional e Logística </div>
+<div class="box-sub">Faculdade Anhanguera (2025 – 2026) </div>
+</div>
+<div class="edu-box">
+<div class="box-header">Pós-graduação em Análise de Dados </div>
+<div class="box-sub">Faculdade Anhanguera (2024 – 2025) </div>
+</div>
+<div class="edu-box">
+<div class="box-header">Tecnólogo em Análise e Desenv. de Sistemas </div>
+<div class="box-sub">Faculdade Estácio (2022 – 2024) </div>
+</div>
+</section>
+</main>
+</div>
 
 </body>
 </html>
